@@ -38,14 +38,14 @@ async function checkWeather(city){
 
     switch(weather_data.weather[0].main){
         case 'Clouds':{
-            weather_img.src = "/Images/cloudicon.jpg";
+            weather_img.src = "./Images/cloudicon.jpg";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/scatteredClouds.jpg)`
         }
             break;
 
         case 'Clear':{
-            weather_img.src = "/Images/Sun.png";
+            weather_img.src = "./Images/Sun.png";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/weather.jpg)`
             
@@ -53,28 +53,28 @@ async function checkWeather(city){
             break;
 
         case 'Rain':{
-            weather_img.src = "/Images/Rain.png";
+            weather_img.src = "./Images/Rain.png";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/Rain.jpg)`
         }
             break;
 
         case 'Mist':{
-            weather_img.src = "/Images/Mist.png";
+            weather_img.src = "./Images/Mist.png";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/Smoke.jpg)`
         }
         break;
 
         case 'Snow':{
-            weather_img.src = "/Images/Snow.jpg";
+            weather_img.src = "./Images/Snow.jpg";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/Smoke.jpg)`
         }
             break;
 
         case 'Smoke':{
-        weather_img.src = "/Images/cloudicon.jpg";
+        weather_img.src = "./Images/cloudicon.jpg";
         const bg=document.querySelector('body')
         bg.style.backgroundImage=`url(./Images/Smoke.jpg)`
        
