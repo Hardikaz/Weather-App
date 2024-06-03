@@ -5,9 +5,8 @@ const temperature = document.querySelector('.temperature');
 const description = document.querySelector('.description');
 const humidity = document.getElementById('humidity');
 const wind_speed = document.getElementById('wind-speed');
-
+const place_name = document.querySelector('.placename');
 const location_not_found = document.querySelector('.location-not-found');
-
 const weather_body = document.querySelector('.weather-body');
 
 
@@ -78,12 +77,10 @@ async function checkWeather(city){
         const bg=document.querySelector('body')
         bg.style.backgroundImage=`url(./Images/Smoke.jpg)`
        }
-       break;
-       
-        default :{
-           const bg=document.querySelector('body')
-           bg.style.backgroundImage=`url(./Images/Error404.jpg)`
-            }
+        break;
+
+    
+
     }
 
     // console.log(weather_data);
@@ -92,5 +89,7 @@ async function checkWeather(city){
 
 
 searchBtn.addEventListener('click', ()=>{
+    place_name.innerHTML=inputBox.value;
     checkWeather(inputBox.value);
+    // console.log(inputBox.value)
 });
