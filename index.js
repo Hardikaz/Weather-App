@@ -55,7 +55,7 @@ async function checkWeather(city){
         case 'Rain':{
             weather_img.src = "./Images/Rain.png";
             const bg=document.querySelector('body')
-            bg.style.backgroundImage=`url(./Images/Rain.jpg)`
+            bg.style.backgroundImage=`url(./Images/rain.jpg)`
         }
             break;
 
@@ -77,12 +77,13 @@ async function checkWeather(city){
         weather_img.src = "./Images/cloudicon.jpg";
         const bg=document.querySelector('body')
         bg.style.backgroundImage=`url(./Images/Smoke.jpg)`
+       }
+       break;
        
-       
-        }
-
-         break;
-
+        default :{
+           const bg=document.querySelector('body')
+           bg.style.backgroundImage=`url(./Images/Error404.jpg)`
+            }
     }
 
     // console.log(weather_data);
