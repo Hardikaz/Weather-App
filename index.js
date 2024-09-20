@@ -5,9 +5,8 @@ const temperature = document.querySelector('.temperature');
 const description = document.querySelector('.description');
 const humidity = document.getElementById('humidity');
 const wind_speed = document.getElementById('wind-speed');
-
+const place_name = document.querySelector('.placename');
 const location_not_found = document.querySelector('.location-not-found');
-
 const weather_body = document.querySelector('.weather-body');
 
 
@@ -17,7 +16,7 @@ async function checkWeather(city){
 
     const weather_data = await fetch(`${url}`).then(response => response.json());
 
-//  console.log(weather_data);
+ console.log(weather_data);
 
     if(weather_data.cod === `404`){
         location_not_found.style.display = "flex";
@@ -34,18 +33,18 @@ async function checkWeather(city){
 
     humidity.innerHTML = `${weather_data.main.humidity}%`;
     wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`;
-
+    place_name.innerHTML=weather_data.name;
 
     switch(weather_data.weather[0].main){
         case 'Clouds':{
-            weather_img.src = "/Images/cloudicon.jpg";
+            weather_img.src = "./Images/cloudicon.jpg";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/scatteredClouds.jpg)`
         }
             break;
 
         case 'Clear':{
-            weather_img.src = "/Images/Sun.png";
+            weather_img.src = "./Images/Sun.png";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/weather.jpg)`
             
@@ -53,35 +52,34 @@ async function checkWeather(city){
             break;
 
         case 'Rain':{
-            weather_img.src = "/Images/Rain.png";
+            weather_img.src = "./Images/Rain.png";
             const bg=document.querySelector('body')
-            bg.style.backgroundImage=`url(./Images/Rain.jpg)`
+            bg.style.backgroundImage=`url(./Images/rain.jpg)`
         }
             break;
 
         case 'Mist':{
-            weather_img.src = "/Images/Mist.png";
+            weather_img.src = "./Images/Mist.png";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/Smoke.jpg)`
         }
         break;
 
         case 'Snow':{
-            weather_img.src = "/Images/Snow.jpg";
+            weather_img.src = "./Images/Snow.jpg";
             const bg=document.querySelector('body')
             bg.style.backgroundImage=`url(./Images/Smoke.jpg)`
         }
             break;
 
         case 'Smoke':{
-        weather_img.src = "/Images/cloudicon.jpg";
+        weather_img.src = "./Images/cloudicon.jpg";
         const bg=document.querySelector('body')
         bg.style.backgroundImage=`url(./Images/Smoke.jpg)`
-       
-       
-        }
+       }
+        break;
 
-         break;
+    
 
     }
 
@@ -91,5 +89,7 @@ async function checkWeather(city){
 
 
 searchBtn.addEventListener('click', ()=>{
+    // place_name.innerHTML=inputBox.value;
     checkWeather(inputBox.value);
+    // console.log(inputBox.value)
 });
