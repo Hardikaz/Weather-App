@@ -89,14 +89,9 @@ async function checkWeather(city){
 
 
 searchBtn.addEventListener('click', ()=>{
-<<<<<<< HEAD
+
     // place_name.innerHTML=inputBox.value;
     checkWeather(inputBox.value);
     // console.log(inputBox.value)
 });
-=======
-    // place_name.innerHTML=inputBox.value;
-    checkWeather(inputBox.value);
-    // console.log(inputBox.value)
-});
->>>>>>> bbc6a244d00a38d6583c4ed2ba5222a2bcd3e30c
+
