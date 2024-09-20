@@ -95,7 +95,7 @@ searchBtn.addEventListener('click', ()=>{
     // console.log(inputBox.value)
 });
 =======
-    place_name.innerHTML=inputBox.value;
+    // place_name.innerHTML=inputBox.value;
     checkWeather(inputBox.value);
     // console.log(inputBox.value)
 });
